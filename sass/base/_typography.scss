@@ -1,0 +1,57 @@
+
+
+
+.heading-primary {
+    color: $color_primary;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        margin-bottom: 4rem;
+        font-family: $font-primary;
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem;
+        line-height: 3rem;
+        font-family: $font-secondary;
+    }
+}
+
+.heading-secondary {
+    font-family: $font-primary;
+    font-size: 3rem;
+
+    &--white {
+        color: $color_white;
+    }
+}
+
+.paragraph {
+    font-family: $font-secondary;
+    font-size: 1.5rem;
+
+    &--white {
+        color: $color-white;
+    }
+}
+
+.navigation {
+    &__link,
+    &__link:active,
+    &__link:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-secondary;
+        font-size: 2rem;
+        font-family: $font-secondary;
+    }
+}

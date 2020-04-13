@@ -1,0 +1,11 @@
+.section-about {
+    background-color: $color_primary;
+
+    &__content {
+        // @include absCenter;
+    }
+
+    &__img {
+        width: 100%;
+    }
+}

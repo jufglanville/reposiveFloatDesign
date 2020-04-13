@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@200;400;700&display=swap');
+
+$font_primary: 'Lato', sans-serif;
+$font_secondary: 'Raleway', sans-serif;
+
 //  Grid
     // Setting grid max-width to ind standard 1140px
     // _base.scss set 1 rem to 10px
     // 1140 / 10 = 114rem
-$grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-horizontal: 6rem;
+$grid_width: 114rem;
+$gutter_vertical: 8rem;
+$gutter_horizontal: 6rem;
+
+
+// Colours
+$color_primary: #141720;
+$color_secondary: #979797;
+
+$color-white: #ffffff;
