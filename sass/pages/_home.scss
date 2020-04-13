@@ -1,11 +1,24 @@
 .section-about {
     background-color: $color_primary;
+    height: 50rem;
+    overflow: hidden;
 
     &__content {
-        // @include absCenter;
+        // padding: 15%;
+        height: 50rem;
+        padding: 10rem 15rem;
+        max-width: 50rem;
+        margin: auto;
     }
 
     &__img {
-        width: 100%;
+        background-image: url("../img/workers-large.jpg");
+        background-size: cover;
+        height: 50rem;
     }
+}
+
+.section-timeline {
+    height: 50rem;
+    margin: 10rem 20rem;
 }

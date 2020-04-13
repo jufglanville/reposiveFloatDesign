@@ -6,6 +6,7 @@
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 6rem;
+    text-shadow: 0 3rem 8rem rgba($color_black, 0.4);
 
     &--main {
         display: block;
@@ -13,7 +14,7 @@
         font-weight: 400;
         letter-spacing: 3.5rem;
         margin-bottom: 4rem;
-        font-family: $font-primary;
+        font-family: $font_primary;
     }
 
     &--sub {
@@ -22,25 +23,29 @@
         font-weight: 700;
         letter-spacing: 1.5rem;
         line-height: 3rem;
-        font-family: $font-secondary;
+        font-family: $font_secondary;
     }
 }
 
 .heading-secondary {
-    font-family: $font-primary;
+    font-family: $font_primary;
     font-size: 3rem;
+    letter-spacing: 1.1rem;
+    font-weight: 300;
 
     &--white {
-        color: $color_white;
+        color: $color_secondary;
     }
 }
 
 .paragraph {
-    font-family: $font-secondary;
-    font-size: 1.5rem;
+    font-family: $font_secondary;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
 
     &--white {
-        color: $color-white;
+        color: $color_secondary;
     }
 }
 
@@ -50,8 +55,8 @@
     &__link:visited {
         text-decoration: none;
         text-transform: uppercase;
-        color: $color-secondary;
+        color: $color_primary;
         font-size: 2rem;
-        font-family: $font-secondary;
+        font-family: $font_secondary;
     }
 }

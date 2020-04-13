@@ -13,7 +13,8 @@ html {
   color: #141720;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+  text-shadow: 0 3rem 8rem rgba(0, 0, 0, 0.4); }
   .heading-primary--main {
     display: block;
     font-size: 6rem;
@@ -31,26 +32,86 @@ html {
 
 .heading-secondary {
   font-family: "Lato", sans-serif;
-  font-size: 3rem; }
+  font-size: 3rem;
+  letter-spacing: 1.1rem;
+  font-weight: 300; }
   .heading-secondary--white {
-    color: #ffffff; }
+    color: #EFEFEF; }
 
 .paragraph {
   font-family: "Raleway", sans-serif;
-  font-size: 1.5rem; }
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-weight: 400; }
   .paragraph--white {
-    color: #ffffff; }
+    color: #EFEFEF; }
 
 .navigation__link, .navigation__link:active, .navigation__link:visited {
   text-decoration: none;
   text-transform: uppercase;
-  color: #979797;
+  color: #141720;
   font-size: 2rem;
   font-family: "Raleway", sans-serif; }
 
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.timeline {
+  position: relative; }
+  .timeline__radio-input {
+    display: none; }
+  .timeline__radio-group {
+    height: 9rem; }
+  .timeline__radio-label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 6rem;
+    padding-top: 1.3rem;
+    margin-left: 4rem;
+    line-height: 2rem; }
+  .timeline__year {
+    position: absolute;
+    left: -4rem;
+    line-height: 2rem; }
+  .timeline__radio-btn {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #EFEFEF;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .3s; }
+    .timeline__radio-btn::after {
+      content: "";
+      display: block;
+      width: 0.8rem;
+      height: 4rem;
+      background-color: #EFEFEF;
+      position: absolute;
+      left: 1.1rem;
+      top: 3rem; }
+  .timeline__content {
+    opacity: 0; }
+  .timeline__radio-input:checked + .timeline__radio-label .timeline__radio-btn {
+    border: 5px solid #C71222; }
+  .timeline__radio-input:checked ~ .timeline__content {
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%; }
+
 .header {
-  height: 90vh;
-  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4)), url("../img/hero-large.jpg");
+  height: 100vh;
+  background-image: linear-gradient(to left bottom, white, rgba(255, 255, 255, 0.4)), url("../img/hero-large.jpg");
   background-size: cover;
   margin-bottom: 8rem; }
   .header__logo-box {
@@ -61,7 +122,7 @@ html {
     height: 3.5rem; }
   .header__text-box {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
@@ -100,6 +161,19 @@ html {
       margin-right: 3rem; }
 
 .section-about {
-  background-color: #141720; }
+  background-color: #141720;
+  height: 50rem;
+  overflow: hidden; }
+  .section-about__content {
+    height: 50rem;
+    padding: 10rem 15rem;
+    max-width: 50rem;
+    margin: auto; }
   .section-about__img {
-    width: 100%; }
+    background-image: url("../img/workers-large.jpg");
+    background-size: cover;
+    height: 50rem; }
+
+.section-timeline {
+  height: 50rem;
+  margin: 10rem 20rem; }

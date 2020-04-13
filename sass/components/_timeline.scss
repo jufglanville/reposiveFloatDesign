@@ -1,0 +1,75 @@
+.timeline {
+    position: relative;
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-group {
+        height: 9rem;
+        
+    }
+
+    // Positioning of milestone header 
+    &__radio-label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 6rem;
+        padding-top: 1.3rem;
+        margin-left: 4rem;
+        line-height: 2rem;
+    }
+
+    // Positioning of Year on Timeline
+    &__year {
+        position: absolute;
+        left: -4rem;
+        line-height: 2rem;
+    }
+
+    // Style of Year Circle
+    &__radio-btn {
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color_secondary;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all .3s;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 0.8rem;
+            height: 4rem;
+            background-color: $color_secondary;
+            position: absolute;
+            left: 1.1rem;
+            top: 3rem;
+        }
+
+        
+    }
+
+    // Style Timeline Content Text
+    &__content {
+        opacity: 0;
+    }
+
+    // Turn Year Circle Red
+    &__radio-input:checked + &__radio-label &__radio-btn {
+        border: 5px solid $color_tertiary;
+    }
+
+    // Turn on Opacity of Text
+    &__radio-input:checked ~ &__content {
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+    }
+
+}

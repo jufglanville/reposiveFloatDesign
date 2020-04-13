@@ -1,7 +1,7 @@
 .header {
-    height: 90vh;
-    background-image: linear-gradient(to right bottom,
-        rgba(255, 255, 255, 0.9), 
+    height: 100vh;
+    background-image: linear-gradient(to left bottom,
+        rgba(255, 255, 255, 1), 
         rgba(255, 255, 255, 0.4)), 
         url("../img/hero-large.jpg");
     background-size: cover;
@@ -19,7 +19,7 @@
 
     &__text-box {
         position: absolute;
-        top: 45%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
