@@ -1,8 +1,12 @@
 .navigation {
     position: fixed;
-    right: 4rem;
-    top: 4rem;
+    right: 3rem;
+    top: 3rem;
     display: inline-block;
+    z-index: 1000;
+    padding: 1rem;
+    background-color: rgba($color_white, 0.9);
+    border-radius: .3rem;
 
     &__list {
         list-style: none;
@@ -19,5 +23,9 @@
     &__link:active,
     &__link:visited {
 
+    }
+
+    &__link:hover {
+        transform: scale(1.1);
     }
 }

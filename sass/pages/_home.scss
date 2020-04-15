@@ -2,13 +2,15 @@
     background-color: $color_primary;
     height: 50rem;
     overflow: hidden;
+    clip-path: polygon(0 0, 50% 21%, 100% 0, 100% 100%, 0 100%);
 
     &__content {
-        // padding: 15%;
         height: 50rem;
         padding: 10rem 15rem;
-        max-width: 50rem;
-        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
     }
 
     &__img {
@@ -19,6 +21,11 @@
 }
 
 .section-timeline {
-    height: 50rem;
-    margin: 10rem 20rem;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.section-services {
+    background-color: $color_secondary;
+    padding: 10rem;
 }

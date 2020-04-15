@@ -60,7 +60,7 @@ html {
   margin-bottom: 4rem !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem !important; }
+  margin-bottom: 6rem !important; }
 
 .timeline {
   position: relative; }
@@ -68,17 +68,22 @@ html {
     display: none; }
   .timeline__radio-group {
     height: 9rem; }
+  .timeline__group {
+    margin-left: 19%; }
   .timeline__radio-label {
     cursor: pointer;
     position: relative;
     padding-left: 6rem;
     padding-top: 1.3rem;
     margin-left: 4rem;
-    line-height: 2rem; }
+    line-height: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem; }
   .timeline__year {
     position: absolute;
-    left: -4rem;
-    line-height: 2rem; }
+    left: -6rem;
+    line-height: 2rem;
+    transition: color .3s; }
   .timeline__radio-btn {
     display: inline-block;
     height: 3rem;
@@ -89,37 +94,42 @@ html {
     left: 0;
     top: 0;
     transition: all .3s; }
-    .timeline__radio-btn::after {
+    .timeline__radio-btn::before {
       content: "";
       display: block;
-      width: 0.8rem;
+      width: 0.6rem;
       height: 4rem;
       background-color: #EFEFEF;
       position: absolute;
       left: 1.1rem;
-      top: 3rem; }
+      top: -5rem; }
   .timeline__content {
-    opacity: 0; }
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: -3rem;
+    width: 50%;
+    transition: all .3s;
+    padding: 5rem 10rem;
+    box-sizing: border-box; }
   .timeline__radio-input:checked + .timeline__radio-label .timeline__radio-btn {
     border: 5px solid #C71222; }
   .timeline__radio-input:checked ~ .timeline__content {
-    opacity: 1;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%; }
+    opacity: 1; }
+  .timeline__radio-input:checked + .timeline__radio-label .timeline__year {
+    color: #C71222; }
 
 .header {
   height: 100vh;
   background-image: linear-gradient(to left bottom, white, rgba(255, 255, 255, 0.4)), url("../img/hero-large.jpg");
   background-size: cover;
-  margin-bottom: 8rem; }
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); }
   .header__logo-box {
     position: absolute;
-    top: 4rem;
+    top: 3rem;
     left: 4rem; }
   .header__logo {
-    height: 3.5rem; }
+    height: 5rem; }
   .header__text-box {
     position: absolute;
     top: 50%;
@@ -150,30 +160,43 @@ html {
 
 .navigation {
   position: fixed;
-  right: 4rem;
-  top: 4rem;
-  display: inline-block; }
+  right: 3rem;
+  top: 3rem;
+  display: inline-block;
+  z-index: 1000;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: .3rem; }
   .navigation__list {
     list-style: none; }
   .navigation__item {
     display: inline-block; }
     .navigation__item:not(:last-child) {
       margin-right: 3rem; }
+  .navigation__link:hover {
+    transform: scale(1.1); }
 
 .section-about {
   background-color: #141720;
   height: 50rem;
-  overflow: hidden; }
+  overflow: hidden;
+  clip-path: polygon(0 0, 50% 21%, 100% 0, 100% 100%, 0 100%); }
   .section-about__content {
     height: 50rem;
     padding: 10rem 15rem;
-    max-width: 50rem;
-    margin: auto; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box; }
   .section-about__img {
     background-image: url("../img/workers-large.jpg");
     background-size: cover;
     height: 50rem; }
 
 .section-timeline {
-  height: 50rem;
-  margin: 10rem 20rem; }
+  margin-top: 10rem;
+  position: relative; }
+
+.section-services {
+  background-color: #EFEFEF;
+  padding: 10rem; }
