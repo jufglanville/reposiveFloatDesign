@@ -1,4 +1,6 @@
-
+body {
+    font-family: $font_secondary;
+}
 
 
 .heading-primary {
@@ -35,6 +37,21 @@
 
     &--white {
         color: $color_secondary;
+    }
+
+    &--grey {
+        color: $color_primary;
+    }
+}
+
+.heading-tertiary {
+    font-family: $font_primary;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    font-weight: 700;
+
+    &--grey {
+        color: $color_primary;
     }
 }
 

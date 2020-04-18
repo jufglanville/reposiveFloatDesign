@@ -6,7 +6,7 @@
 
     &__content {
         height: 50rem;
-        padding: 10rem 15rem;
+        padding: 15rem 15rem 10rem 15rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -28,4 +28,43 @@
 .section-services {
     background-color: $color_secondary;
     padding: 10rem;
+
+    &__heading {
+        text-align: center;
+    }
+}
+
+.section-hiring {
+    background-color: $color_primary;
+    height: 50rem;
+
+    &__content {
+        height: 50rem;
+        padding: 10rem 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    &__img {
+        background-image: url("../img/collaboration-large.jpg");
+        background-size: cover;
+        height: 50rem;
+    }
+}
+
+.section-contact {
+    background-color: $color_primary;
+    height: 50rem;
+
+    &__form {
+        padding: 10rem 15rem;
+    }
+
+    &__img {
+        background-image: url("../img/collaboration-large.jpg");
+        background-size: cover;
+        height: 50rem;
+    }
 }

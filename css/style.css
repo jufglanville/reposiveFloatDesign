@@ -9,6 +9,9 @@
 html {
   font-size: 62.5%; }
 
+body {
+  font-family: "Raleway", sans-serif; }
+
 .heading-primary {
   color: #141720;
   text-transform: uppercase;
@@ -37,6 +40,16 @@ html {
   font-weight: 300; }
   .heading-secondary--white {
     color: #EFEFEF; }
+  .heading-secondary--grey {
+    color: #141720; }
+
+.heading-tertiary {
+  font-family: "Lato", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: .1rem;
+  font-weight: 700; }
+  .heading-tertiary--grey {
+    color: #141720; }
 
 .paragraph {
   font-family: "Raleway", sans-serif;
@@ -61,6 +74,26 @@ html {
 
 .u-margin-bottom-big {
   margin-bottom: 6rem !important; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-family: inherit;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem 1.5rem 0;
+  background-color: #141720;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  transition: all .3s;
+  display: block;
+  width: 90%; }
+  .form__input:focus {
+    outline: none;
+    border-bottom: 2px solid #e9e9e9; }
+  .form__input::-webkit-input-placeholder {
+    color: #ffffff; }
 
 .timeline {
   position: relative; }
@@ -107,11 +140,15 @@ html {
     opacity: 0;
     position: absolute;
     right: 0;
-    top: -3rem;
+    top: -6rem;
     width: 50%;
     transition: all .3s;
     padding: 5rem 10rem;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    height: 36rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
   .timeline__radio-input:checked + .timeline__radio-label .timeline__radio-btn {
     border: 5px solid #C71222; }
   .timeline__radio-input:checked ~ .timeline__content {
@@ -119,8 +156,11 @@ html {
   .timeline__radio-input:checked + .timeline__radio-label .timeline__year {
     color: #C71222; }
 
+.services-card {
+  margin: 4rem; }
+
 .header {
-  height: 100vh;
+  height: 90vh;
   background-image: linear-gradient(to left bottom, white, rgba(255, 255, 255, 0.4)), url("../img/hero-large.jpg");
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); }
@@ -148,7 +188,7 @@ html {
   .row .col-1-of-2 {
     width: calc(100% / 2); }
   .row .col-1-of-3 {
-    width: calc((100% - 6rem * 2) / 3); }
+    width: calc(100% / 3); }
   .row .col-1-of-4 {
     width: calc((100% - 6rem * 3) / 4); }
   .row .col-2-of-3 {
@@ -183,7 +223,7 @@ html {
   clip-path: polygon(0 0, 50% 21%, 100% 0, 100% 100%, 0 100%); }
   .section-about__content {
     height: 50rem;
-    padding: 10rem 15rem;
+    padding: 15rem 15rem 10rem 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,3 +240,30 @@ html {
 .section-services {
   background-color: #EFEFEF;
   padding: 10rem; }
+  .section-services__heading {
+    text-align: center; }
+
+.section-hiring {
+  background-color: #141720;
+  height: 50rem; }
+  .section-hiring__content {
+    height: 50rem;
+    padding: 10rem 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box; }
+  .section-hiring__img {
+    background-image: url("../img/collaboration-large.jpg");
+    background-size: cover;
+    height: 50rem; }
+
+.section-contact {
+  background-color: #141720;
+  height: 50rem; }
+  .section-contact__form {
+    padding: 10rem 15rem; }
+  .section-contact__img {
+    background-image: url("../img/collaboration-large.jpg");
+    background-size: cover;
+    height: 50rem; }
