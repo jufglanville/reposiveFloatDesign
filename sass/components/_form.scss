@@ -1,31 +1,63 @@
 .form {
-&__group:not(:last-child) {
-    margin-bottom: 2rem;
-}
+    position: relative;
 
-&__input {
-    font-family: inherit;
-    color: $color_white;
-    font-size: 1.5rem;
-    padding: 1.5rem 2rem 1.5rem 0;
-    background-color: $color_primary;
-    border: none;
-    border-bottom: 2px solid $color_white;
-    transition: all .3s;
-    display: block;
-    width: 90%;
-
-    &:focus {
-        outline: none;
-        border-bottom: 2px solid $color_grey;
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
     }
 
-    &::-webkit-input-placeholder {
+    &__input {
+        font-family: inherit;
         color: $color_white;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        background-color: $color_primary;
+        border: none;
+        border-bottom: 2px solid $color_white;
+        transition: all .3s;
+        display: block;
+        width: 90%;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus:invalid {
+            border-bottom: 2px solid $color_tertiary;
+        }
+
+        &:focus:valid {
+            border-bottom: 2px solid $color_green;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color_white;
+        }
     }
-}
 
-&__label {
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
 
-}
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 1.5rem;
+        margin-top: .7rem;
+        display: block;
+        color: $color_white;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown ~ &__btn {
+        transform: translateY(-7rem);
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: -3.5rem;
+        right: 3.5rem;
+        transition: all .3s;
+    }
 }

@@ -75,25 +75,68 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 6rem !important; }
 
-.form__group:not(:last-child) {
-  margin-bottom: 2rem; }
-
-.form__input {
-  font-family: inherit;
-  color: #ffffff;
-  font-size: 1.5rem;
-  padding: 1.5rem 2rem 1.5rem 0;
-  background-color: #141720;
+.btn {
+  padding: 1.5rem 3rem;
+  border-radius: 10rem;
+  background-color: #C71222;
   border: none;
-  border-bottom: 2px solid #ffffff;
-  transition: all .3s;
-  display: block;
-  width: 90%; }
-  .form__input:focus {
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all .2s; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active, .btn:focus {
     outline: none;
-    border-bottom: 2px solid #e9e9e9; }
-  .form__input::-webkit-input-placeholder {
-    color: #ffffff; }
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.form {
+  position: relative; }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__input {
+    font-family: inherit;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    background-color: #141720;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    transition: all .3s;
+    display: block;
+    width: 90%; }
+    .form__input:focus {
+      outline: none; }
+    .form__input:focus:invalid {
+      border-bottom: 2px solid #C71222; }
+    .form__input:focus:valid {
+      border-bottom: 2px solid #14c414; }
+    .form__input::-webkit-input-placeholder {
+      color: #ffffff; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 1.5rem;
+    margin-top: .7rem;
+    display: block;
+    color: #ffffff;
+    transition: all .3s; }
+  .form__input:placeholder-shown ~ .form__btn {
+    transform: translateY(-7rem); }
+  .form__btn {
+    position: absolute;
+    bottom: -3.5rem;
+    right: 3.5rem;
+    transition: all .3s; }
 
 .timeline {
   position: relative; }
@@ -259,11 +302,10 @@ body {
     height: 50rem; }
 
 .section-contact {
-  background-color: #141720;
-  height: 50rem; }
+  background-color: #141720; }
   .section-contact__form {
     padding: 10rem 15rem; }
   .section-contact__img {
     background-image: url("../img/collaboration-large.jpg");
     background-size: cover;
-    height: 50rem; }
+    height: 62rem; }
