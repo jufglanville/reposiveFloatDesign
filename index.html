@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Float</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+
+
 </head>
 <body>
 
     <nav class="navigation"> 
         <ul class="navigation__list">
             <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Services</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Jobs</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Contact Us</a></li>
+            <li class="navigation__item"><a href="#about" class="navigation__link">About Us</a></li>
+            <li class="navigation__item"><a href="#services" class="navigation__link">Services</a></li>
+            <li class="navigation__item"><a href="#jobs" class="navigation__link">Jobs</a></li>
+            <li class="navigation__item"><a href="#contact" class="navigation__link">Contact Us</a></li>
         </ul>
     </nav> 
 
@@ -31,7 +36,7 @@
     </header>
 
     <main>
-        <div class="section-about">
+        <div id="about" class="section-about">
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="section-about__content">
@@ -107,7 +112,7 @@
             </div>
         </div>
 
-        <div class="section-services">
+        <div id="services" class="section-services">
             <h2 class="section-services__heading heading-secondary heading-secondary--grey u-margin-bottom-medium">Our Services</h2>
         
             <div class="row">
@@ -158,7 +163,7 @@
             </div>
         </div>
 
-        <div class="section-hiring">
+        <div id="jobs" class="section-hiring">
             <div class="row">
                 <div class="col-1-of-2">
                     <!-- <img srcset="img/workers-small.jpg 1x, img/workers-large.jpg 2x" alt="Workers collaborating" class="section-about__img"> -->
@@ -174,7 +179,7 @@
             </div>
         </div>
 
-        <div class="section-contact">
+        <div id="contact" class="section-contact">
             <div class="row">
                 <div class="col-1-of-2">
                     <div class="section-contact__form">
@@ -199,10 +204,8 @@
                     </div>
                 </div>
                 <div class="col-1-of-2">
-                    <!-- <img srcset="img/workers-small.jpg 1x, img/workers-large.jpg 2x" alt="Workers collaborating" class="section-about__img"> -->
-                    <!-- <div class="section-contact__img">&nbsp;</div> -->
                     <div class="section-contact__map">
-                        <div id="googleMap" style="width:100%;height:62rem;"></div>
+                        <div id="map" style="width:100%;height:62rem;"></div>
                     </div>
                 </div>
             </div>
@@ -280,16 +283,22 @@
     </section> -->
 
     <script>
-        function myMap() {
-        const mapProperties= {
-          center:new google.maps.LatLng(51.508742,-0.120850),
-          zoom:5,
-        };
-        const map = new google.maps.Map(document.getElementById("googleMap"),mapProperties);
-        }
+        mapboxgl.accessToken = 'pk.eyJ1IjoianVmZ2xhbnZpbGxlIiwiYSI6ImNrOWVvZG9obzAzb2IzZnFtanh5cDBubWcifQ.yMQAFvhPAqwR090-ic3Iig';
+        const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [12.605343, 55.675957],
+        zoom: 12
+        });
+
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // Add marker to map 
+        const marker = new mapboxgl.Marker()
+        .setLngLat([12.605343, 55.675957])
+        .addTo(map);
     </script>
-        
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkNRvU6RQUiOs3YpRfxu3eHFrCzqjLGxc&callback=myMap"></script>
 
 </body>
 </html>
