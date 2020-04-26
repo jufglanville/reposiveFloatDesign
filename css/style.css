@@ -8,6 +8,15 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   font-family: "Raleway", sans-serif; }
@@ -140,12 +149,23 @@ body {
 
 .timeline {
   position: relative; }
+  .timeline__group {
+    margin-left: 19%; }
+    @media only screen and (max-width: 56.25em) {
+      .timeline__group {
+        height: 50rem;
+        margin: auto;
+        text-align: center; } }
   .timeline__radio-input {
     display: none; }
   .timeline__radio-group {
     height: 9rem; }
-  .timeline__group {
-    margin-left: 19%; }
+    @media only screen and (max-width: 56.25em) {
+      .timeline__radio-group {
+        display: inline-block;
+        text-align: center;
+        width: 10rem;
+        padding: 0 2rem; } }
   .timeline__radio-label {
     cursor: pointer;
     position: relative;
@@ -160,6 +180,12 @@ body {
     left: -6rem;
     line-height: 2rem;
     transition: color .3s; }
+    @media only screen and (max-width: 56.25em) {
+      .timeline__year {
+        left: 0;
+        top: -3rem;
+        display: block;
+        position: initial; } }
   .timeline__radio-btn {
     display: inline-block;
     height: 3rem;
@@ -170,6 +196,11 @@ body {
     left: 0;
     top: 0;
     transition: all .3s; }
+    @media only screen and (max-width: 56.25em) {
+      .timeline__radio-btn {
+        display: block;
+        position: initial;
+        margin: 1.4rem auto; } }
     .timeline__radio-btn::before {
       content: "";
       display: block;
@@ -179,6 +210,14 @@ body {
       position: absolute;
       left: 1.1rem;
       top: -5rem; }
+      @media only screen and (max-width: 56.25em) {
+        .timeline__radio-btn::before {
+          top: 7rem;
+          left: 7rem;
+          transform: rotate(90deg); } }
+    @media only screen and (max-width: 56.25em) {
+      .timeline__radio-btn--last::before {
+        display: none; } }
   .timeline__content {
     opacity: 0;
     position: absolute;
@@ -192,6 +231,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+    @media only screen and (max-width: 56.25em) {
+      .timeline__content {
+        width: 80%;
+        right: 10%;
+        top: 11rem;
+        padding: 5rem; } }
   .timeline__radio-input:checked + .timeline__radio-label .timeline__radio-btn {
     border: 5px solid #C71222; }
   .timeline__radio-input:checked ~ .timeline__content {
@@ -201,12 +246,18 @@ body {
 
 .services-card {
   margin: 4rem; }
+  @media only screen and (max-width: 37.5em) {
+    .services-card {
+      text-align: center; } }
 
 .header {
   height: 90vh;
   background-image: linear-gradient(to left bottom, white, rgba(255, 255, 255, 0.4)), url("../img/hero-large.jpg");
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 90%, 0 80%); } }
   .header__logo-box {
     position: absolute;
     top: 3rem;
@@ -230,8 +281,14 @@ body {
     float: left; }
   .row .col-1-of-2 {
     width: calc(100% / 2); }
+    @media only screen and (max-width: 37.5em) {
+      .row .col-1-of-2 {
+        width: 100%; } }
   .row .col-1-of-3 {
     width: calc(100% / 3); }
+    @media only screen and (max-width: 37.5em) {
+      .row .col-1-of-3 {
+        width: 100%; } }
   .row .col-1-of-4 {
     width: calc((100% - 6rem * 3) / 4); }
   .row .col-2-of-3 {
@@ -264,21 +321,35 @@ body {
   height: 50rem;
   overflow: hidden;
   clip-path: polygon(0 0, 50% 21%, 100% 0, 100% 100%, 0 100%); }
+  @media only screen and (max-width: 37.5em) {
+    .section-about {
+      clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 100%, 0 100%);
+      height: initial; } }
   .section-about__content {
     height: 50rem;
-    padding: 15rem 15rem 10rem 15rem;
+    padding: 15% 15% 10% 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box; }
+    @media only screen and (max-width: 37.5em) {
+      .section-about__content {
+        height: 40rem;
+        padding: 20% 15% 10% 15%; } }
   .section-about__img {
     background-image: url("../img/workers-large.jpg");
     background-size: cover;
     height: 50rem; }
+    @media only screen and (max-width: 37.5em) {
+      .section-about__img {
+        height: 30rem; } }
 
 .section-timeline {
   margin-top: 10rem;
   position: relative; }
+  @media only screen and (max-width: 56.25em) {
+    .section-timeline {
+      margin-top: 5rem; } }
 
 .section-services {
   background-color: #EFEFEF;
@@ -289,13 +360,21 @@ body {
 .section-hiring {
   background-color: #141720;
   height: 50rem; }
+  @media only screen and (max-width: 37.5em) {
+    .section-hiring {
+      position: relative; } }
   .section-hiring__content {
     height: 50rem;
-    padding: 10rem 15rem;
+    padding: 10% 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box; }
+    @media only screen and (max-width: 37.5em) {
+      .section-hiring__content {
+        position: absolute;
+        bottom: 0;
+        backdrop-filter: brightness(0.3); } }
   .section-hiring__img {
     background-image: url("../img/collaboration-large.jpg");
     background-size: cover;
@@ -304,8 +383,10 @@ body {
 .section-contact {
   background-color: #141720; }
   .section-contact__form {
-    padding: 10rem 15rem; }
-  .section-contact__img {
-    background-image: url("../img/collaboration-large.jpg");
-    background-size: cover;
+    padding: 10% 15%; }
+  .section-contact__map {
+    width: 100%;
     height: 62rem; }
+    @media only screen and (max-width: 56.25em) {
+      .section-contact__map {
+        height: 53rem; } }

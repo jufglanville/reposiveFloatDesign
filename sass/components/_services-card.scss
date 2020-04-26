@@ -1,3 +1,7 @@
 .services-card {
     margin: 4rem;
+
+    @include respond(phone) { // width < 900?
+        text-align: center;
+    }
 }

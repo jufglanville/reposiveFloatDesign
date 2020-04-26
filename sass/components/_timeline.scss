@@ -1,6 +1,17 @@
 .timeline {
     position: relative;
 
+        // Positioning of Timeline
+        &__group {
+            margin-left: 19%;
+
+            @include respond(tab-port) { // width < 900?
+                height: 50rem;
+                margin: auto;
+                text-align: center;
+            }
+        }
+
     &__radio-input {
         display: none;
     }
@@ -8,11 +19,12 @@
     &__radio-group {
         height: 9rem;
         
-    }
-
-    // Positioning of Timeline
-    &__group {
-        margin-left: 19%;
+        @include respond(tab-port) { // width < 900?
+            display: inline-block;
+            text-align: center;
+            width: 10rem;
+            padding: 0 2rem;
+        }
     }
 
     // Positioning of milestone header 
@@ -33,6 +45,13 @@
         left: -6rem;
         line-height: 2rem;
         transition: color .3s;
+
+        @include respond(tab-port) { // width < 900?
+            left: 0;
+            top: -3rem;
+            display: block;
+            position: initial;
+        }
     }
 
     // Style of Year Circle
@@ -47,6 +66,12 @@
         top: 0;
         transition: all .3s;
 
+        @include respond(tab-port) { // width < 900?
+            display: block;
+            position: initial;
+            margin: 1.4rem auto;
+        }
+
         &::before {
             content: "";
             display: block;
@@ -56,6 +81,18 @@
             position: absolute;
             left: 1.1rem;
             top: -5rem;
+
+            @include respond(tab-port) { // width < 900?
+                top: 7rem;
+                left: 7rem;
+                transform: rotate(90deg);
+            }
+        }
+
+        &--last::before {
+            @include respond(tab-port) { // width < 900?
+                display: none;
+            }
         }
         
     }
@@ -74,6 +111,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @include respond(tab-port) { // width < 900?
+            width: 80%;
+            right: 10%;
+            top: 11rem;
+            padding: 5rem;
+        }
     }
 
     // Turn Year Circle Red
