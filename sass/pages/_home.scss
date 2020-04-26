@@ -91,6 +91,9 @@
 
     &__form {
         padding: 10% 15%;
+        @include respond(tab-port) { // width < 900?
+            padding: 10%;
+        }
     }
 
     &__map {

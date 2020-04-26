@@ -84,6 +84,9 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 6rem !important; }
 
+.u-last-letter {
+  letter-spacing: initial !important; }
+
 .btn {
   padding: 1.5rem 3rem;
   border-radius: 10rem;
@@ -246,7 +249,7 @@ body {
 
 .services-card {
   margin: 4rem; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 56.25em) {
     .services-card {
       text-align: center; } }
 
@@ -255,6 +258,9 @@ body {
   background-image: linear-gradient(to left bottom, white, rgba(255, 255, 255, 0.4)), url("../img/hero-large.jpg");
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%); } }
   @media only screen and (max-width: 37.5em) {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 90%, 0 80%); } }
@@ -286,7 +292,7 @@ body {
         width: 100%; } }
   .row .col-1-of-3 {
     width: calc(100% / 3); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 56.25em) {
       .row .col-1-of-3 {
         width: 100%; } }
   .row .col-1-of-4 {
@@ -298,7 +304,27 @@ body {
   .row .col-3-of-4 {
     width: calc( 3* ((100% - 6rem * 3) / 4) + 6rem * 2); }
 
-.navigation {
+.navigation__checkbox {
+  display: none; }
+
+.navigation__button {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 6rem;
+  width: 6rem;
+  position: fixed;
+  top: 1.7rem;
+  right: 2rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  display: none; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__button {
+      display: inline-block; } }
+
+.navigation__nav {
   position: fixed;
   right: 3rem;
   top: 3rem;
@@ -306,15 +332,78 @@ body {
   z-index: 1000;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.9);
-  border-radius: .3rem; }
-  .navigation__list {
-    list-style: none; }
-  .navigation__item {
+  border-radius: .3rem;
+  opacity: 0;
+  transition: all .2s; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__nav {
+      right: 10rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__nav {
+      right: 2rem;
+      top: 9rem; } }
+
+.navigation__list {
+  list-style: none; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; } }
+
+.navigation__item {
+  display: inline-block; }
+  .navigation__item:not(:last-child) {
+    margin-right: 3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__item {
+      margin: 1rem 0 !important;
+      padding: 1rem; } }
+
+.navigation__link:hover {
+  transform: scale(1.1); }
+
+@media only screen and (max-width: 56.25em) {
+  .navigation__link {
+    font-size: 1.6rem; } }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1; }
+
+.navigation__icon {
+  position: relative;
+  margin-top: 3rem; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #000000;
     display: inline-block; }
-    .navigation__item:not(:last-child) {
-      margin-right: 3rem; }
-  .navigation__link:hover {
-    transform: scale(1.1); }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s; }
+  .navigation__icon::before {
+    top: -.8rem; }
+  .navigation__icon::after {
+    top: .8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
 
 .section-about {
   background-color: #141720;
@@ -384,6 +473,9 @@ body {
   background-color: #141720; }
   .section-contact__form {
     padding: 10% 15%; }
+    @media only screen and (max-width: 56.25em) {
+      .section-contact__form {
+        padding: 10%; } }
   .section-contact__map {
     width: 100%;
     height: 62rem; }
