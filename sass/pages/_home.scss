@@ -49,6 +49,10 @@
     background-color: $color_secondary;
     padding: 10rem;
 
+    @include respond(phone) { // width < 900?
+        padding: 10rem 1rem;
+    }
+
     &__heading {
         text-align: center;
     }

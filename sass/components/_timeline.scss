@@ -5,7 +5,7 @@
         &__group {
             margin-left: 19%;
 
-            @include respond(tab-port) { // width < 900?
+            @include respond(tab-port) { // width < 900
                 height: 50rem;
                 margin: auto;
                 text-align: center;
@@ -19,11 +19,16 @@
     &__radio-group {
         height: 9rem;
         
-        @include respond(tab-port) { // width < 900?
+        @include respond(tab-port) { // width < 900
             display: inline-block;
             text-align: center;
             width: 10rem;
             padding: 0 2rem;
+        }
+
+        @include respond(phone) {
+            padding: 0;
+            width: 9rem;
         }
     }
 
@@ -46,7 +51,7 @@
         line-height: 2rem;
         transition: color .3s;
 
-        @include respond(tab-port) { // width < 900?
+        @include respond(tab-port) { // width < 900
             left: 0;
             top: -3rem;
             display: block;
@@ -66,7 +71,7 @@
         top: 0;
         transition: all .3s;
 
-        @include respond(tab-port) { // width < 900?
+        @include respond(tab-port) { // width < 900
             display: block;
             position: initial;
             margin: 1.4rem auto;
@@ -82,15 +87,19 @@
             left: 1.1rem;
             top: -5rem;
 
-            @include respond(tab-port) { // width < 900?
+            @include respond(tab-port) { // width < 900
                 top: 7rem;
                 left: 7rem;
                 transform: rotate(90deg);
             }
+
+            @include respond(phone) { // width < 600
+                left: 4.8rem;
+            }
         }
 
         &--last::before {
-            @include respond(tab-port) { // width < 900?
+            @include respond(tab-port) { // width < 900
                 display: none;
             }
         }
@@ -112,11 +121,18 @@
         flex-direction: column;
         justify-content: center;
 
-        @include respond(tab-port) { // width < 900?
+        @include respond(tab-port) { // width < 900
             width: 80%;
             right: 10%;
             top: 11rem;
             padding: 5rem;
+        }
+
+        @include respond(phone) { // width < 600
+            width: 90%;
+            right: 5%;
+            top: 11rem;
+            padding: 0;
         }
     }
 
